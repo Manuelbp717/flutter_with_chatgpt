@@ -1,3 +1,5 @@
+import 'package:app_with_chatgpt_manuelbaas/constants/constants.dart';
+import 'package:app_with_chatgpt_manuelbaas/screens/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor:scaffoldBackgroundColor,
+        appBarTheme: AppBarTheme(
+          color: cardColor,
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
