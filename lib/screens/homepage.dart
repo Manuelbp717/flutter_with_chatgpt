@@ -1,4 +1,5 @@
 import 'package:app_with_chatgpt_manuelbaas/constants/constants.dart';
+import 'package:app_with_chatgpt_manuelbaas/services/api_services.dart';
 import 'package:app_with_chatgpt_manuelbaas/services/assets_manage.dart';
 import 'package:app_with_chatgpt_manuelbaas/services/services.dart';
 import 'package:app_with_chatgpt_manuelbaas/widgets/chat_widget.dart';
@@ -112,7 +113,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     IconButton(
-                        onPressed: () async {},
+                        onPressed: () async {
+                          try {
+                              await ApiService.getModels();
+                          } catch (error) {
+                            print("error $error");
+                          }
+                        },
                         icon: const Icon(
                           Icons.send,
                           color: Colors.white,
