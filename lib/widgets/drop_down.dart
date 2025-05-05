@@ -29,7 +29,9 @@ class _ModelsDropDownWidgetState extends State<ModelsDropDownWidget> {
       future: modelsProvider.getAllModels(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return Center(child: TextWidget(label: snapshot.error.toString()));
+          return Center(
+            child: TextWidget(label: snapshot.error.toString())
+            );
         }
         return snapshot.data == null || snapshot.data!.isEmpty
             ? const SizedBox.shrink()
